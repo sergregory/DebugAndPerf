@@ -1,0 +1,15 @@
+language: cpp
+sudo: false
+compiler:
+  - gcc
+  - clang
+before_script:
+  - mkdir ./_build
+  - cd ./_build
+script:
+  - cmake -DCMAKE_BUILD_TYPE=Release ..
+  - make -j
+  - cd ./bin
+  - ./test_app_test
+notifications:
+  email: false
