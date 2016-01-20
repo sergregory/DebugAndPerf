@@ -10,6 +10,6 @@ script:
   - cmake -DCMAKE_BUILD_TYPE=Release ..
   - make -j
   - cd ./bin
-  - ./test_app_test
+  - ./perf_framework_test
 notifications:
   email: false
