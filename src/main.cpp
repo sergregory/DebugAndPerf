@@ -1,21 +1,17 @@
 #include "perf.hpp"
 #include <iostream>
-#include <time.h>
+#include <ctime>
 using namespace std;
 
 int main()
 {
-
 	int a =4;
-	long t1 = clock();
-	for(int i = 0; i < 3; ++i)
+	clock_t t1 = clock();
+	for(int i = 0; i < 900000; ++i)
 	{
-		
 		a = a + 2;
-		
-
 	}
-	long t2 = clock();
-	cout << t2 - t1 << endl;
+	clock_t t2 = clock();
+	cout << float(t2 - t1)/ CLOCKS_PER_SEC << " sec "<< endl;
     return 0;
 }
