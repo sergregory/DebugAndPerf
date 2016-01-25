@@ -1,16 +1,12 @@
 #include "perf.hpp"
-#include <iostream>
-#include <ctime>
-using namespace std;
 
-#define TIC(name) clock_t start_##name = clock(); 
-#define TOC(name) cout << float(clock() - start_##name)/ CLOCKS_PER_SEC << " sec "<< endl;
+#define TIC(name) clock_t start_##name = calcTicTime(); 
+#define TOC(name) calcTocTime(clock_t start_##name);
 
 
 int main()
 {
 	int a =4;
-	//clock_t t1 = clock();
 	TIC(loop);
 	for(int i = 0; i < 9000000; ++i)
 	{
@@ -18,7 +14,5 @@ int main()
 	}
 	TOC(loop);
 	
-	//clock_t t2 = clock();
-	//cout << float(t2 - t1)/ CLOCKS_PER_SEC << " sec "<< endl;
     return 0;
 }
