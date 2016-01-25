@@ -3,8 +3,8 @@
 #include <ctime>
 using namespace std;
 
-#define TIC(name) clock_t start_##name  = clock();
-#define TOC(name) std::cout << "Time for " #name << ": " << float(clock() - start_##name) / CLOCKS_PER_SEC << " sec" << std::endl
+#define TIC(name) clock_t start_##name = clock(); 
+#define TOC(name) cout << float(clock() - start_##name)/ CLOCKS_PER_SEC << " sec "<< endl;
 
 
 int main()
