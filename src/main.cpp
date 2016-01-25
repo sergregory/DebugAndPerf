@@ -3,22 +3,20 @@
 #include <ctime>
 using namespace std;
 
-#define FUNCTION(id,name) void _##id() {clock_t t1 = clock(); cout <<#name << float(t1)/ CLOCKS_PER_SEC << " sec "<< endl;};
-FUNCTION (TIC,loop)
-FUNCTION (TOC,loop)
-	
+#define TIC(name) clock_t start_##name = clock(); 
+#define TOC(name) cout << float(clock() - start_##name)/ CLOCKS_PER_SEC << " sec "<< endl;
 
 
 int main()
 {
 	int a =4;
 	//clock_t t1 = clock();
-	_TIC();
+	TIC(loop);
 	for(int i = 0; i < 9000000; ++i)
 	{
 		a = a + 2;
 	}
-	_TOC();
+	TOC(loop);
 	
 	//clock_t t2 = clock();
 	//cout << float(t2 - t1)/ CLOCKS_PER_SEC << " sec "<< endl;
