@@ -1,9 +1,8 @@
 #include "perf.hpp"
 
-clock_t calcTicTime(){
-	clock_t t = clock();
-	return t;
+perf_time_t calcTicTime(){
+	return clock();
 }
-void calcTocTime(clock_t ticTime){
+void calcTocTime(perf_time_t ticTime){
 	std::cout << float(clock() - ticTime)/ CLOCKS_PER_SEC << " sec "<< std::endl;
 }
