@@ -1,4 +1,7 @@
+#ifndef __PERF__HPP__
+#define __PERF__HPP__
 #include "perf.hpp"
+#endif
 
 
 int main()
