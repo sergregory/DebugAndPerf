@@ -8,6 +8,9 @@
 class Statistics{
 public:
 	Statistics();
+	int getNcalls() const;
+	float getTotalT() const;
+	float getAverageT() const;
 
 
 private:

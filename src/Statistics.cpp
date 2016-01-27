@@ -7,3 +7,13 @@ Statistics::Statistics(){
 	averageT = 0;
 	isStarted = 1;
 }
+
+int Statistics::getNcalls() const{
+	return nCalls;
+}
+float Statistics::getTotalT() const{
+	return totalT;
+}
+float Statistics::getAverageT() const{
+	return averageT;
+}

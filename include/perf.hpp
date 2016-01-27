@@ -13,7 +13,8 @@ typedef clock_t perf_time_t;
 #define TOC(name) calcTocTime(start_##name);
 
 //TIM...EMIT block
-//Statistics timeStatistics;
+static Statistics timeStatistics;
+//std::cout<<timeStatistics.getNcalls()<<std::endl;
 
 #define TIME(name) perf_time_t start_##name = calcTimeStatistics(); 
 #define EMIT(name) calcEmitStatistics(start_##name);
