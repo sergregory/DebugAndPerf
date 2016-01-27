@@ -4,12 +4,13 @@
 int main()
 {
 	int a =4;
-	TIC(loop);
+	
 	for(int i = 0; i < 9000000; ++i)
 	{
+		TIC(loop);
 		a = a + 2;
+		TOC(loop);
 	}
-	TOC(loop);
-	
+		
     return 0;
 }

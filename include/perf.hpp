@@ -1,3 +1,7 @@
+#ifndef __PERF__HPP__
+#define __PERF__HPP__
+#endif
+
 #include <ctime>
 #include <iostream>
 
