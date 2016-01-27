@@ -1,3 +1,7 @@
+#ifndef __STATISTICS__HPP__
+#define __STATISTICS__HPP__
+#endif
+
 #include <ctime>
 #include <iostream>
 
