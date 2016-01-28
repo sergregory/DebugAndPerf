@@ -31,7 +31,7 @@ float Statistics::setAverageT(){
 bool Statistics::getIsStarted() const{
 	return isStarted;
 }
-bool Statistics::getIsFinished(){
+bool Statistics::setIsFinished(){
 	isStarted = 0;
 	return isStarted;
 }

@@ -22,7 +22,7 @@ perf_time_t calcTicTime();
 void calcTocTime(perf_time_t ticTime);
 
 void startStatistics();
-void changeStstistics();
+void finishStatistics();
 perf_time_t calcTimeStatistics();
 void calcEmitStatistics(perf_time_t ticTime);
 

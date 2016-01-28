@@ -14,7 +14,7 @@ int main()
 		}
 		EMIT(loop);
 	}
-
+	finishStatistics();
 
 	
     return 0;

@@ -15,7 +15,7 @@ public:
 	float getAverageT() const;
 	float setAverageT();
 	bool getIsStarted() const;
-	bool getIsFinished();
+	bool setIsFinished();
 
 private:
 	int nCalls;

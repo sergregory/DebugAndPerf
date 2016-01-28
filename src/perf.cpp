@@ -6,9 +6,20 @@ perf_time_t calcTicTime(){
 void calcTocTime(perf_time_t ticTime){
 	std::cout << float(clock() - ticTime)/ CLOCKS_PER_SEC << " sec "<< std::endl;
 }
-
+Statistics timeStatistics;
 void startStatistics(){
-	Statistics timeStatistics;
+	
+	std::cout<<"Ncalls: "<<timeStatistics.getNcalls()<<std::endl;
+	std::cout<<"totalT: "<<timeStatistics.getTotalT()<<std::endl;
+	std::cout<<"averageT: "<<timeStatistics.getAverageT()<<std::endl;
+	std::cout<<"isStarted: "<<timeStatistics.getIsStarted()<<std::endl;
+	std::cout<<std::endl;
+}
+void finishStatistics(){
+	timeStatistics.setAverageT();
+	timeStatistics.setIsFinished();
+
+	std::cout<<std::endl;
 	std::cout<<"Ncalls: "<<timeStatistics.getNcalls()<<std::endl;
 	std::cout<<"totalT: "<<timeStatistics.getTotalT()<<std::endl;
 	std::cout<<"averageT: "<<timeStatistics.getAverageT()<<std::endl;
@@ -16,10 +27,6 @@ void startStatistics(){
 	std::cout<<std::endl;
 }
 
-void changeStstistics(){
-
-	//timeStatistics.inctementNcalls();
-}
 
 perf_time_t calcTimeStatistics(){
 		
@@ -27,7 +34,8 @@ perf_time_t calcTimeStatistics(){
 }
 void calcEmitStatistics(perf_time_t ticTime){
 	float oneTime = float(clock() - ticTime)/ CLOCKS_PER_SEC;
-	//timeStatistics.inctementTotalT(oneTime);
+	timeStatistics.inctementNcalls();
+	timeStatistics.inctementTotalT(oneTime);
 	std::cout << oneTime << " sec "<< std::endl;
 }
 
