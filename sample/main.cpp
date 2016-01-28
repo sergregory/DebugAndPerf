@@ -4,6 +4,7 @@
 int main()
 {
 	int a =4;
+	startStatistics();
 	for(int i = 0; i < 4; ++i)
 	{
 		TIME(loop);
@@ -13,5 +14,8 @@ int main()
 		}
 		EMIT(loop);
 	}
+
+
+	
     return 0;
 }

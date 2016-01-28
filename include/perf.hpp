@@ -13,9 +13,7 @@ typedef clock_t perf_time_t;
 #define TOC(name) calcTocTime(start_##name);
 
 //TIM...EMIT block
-static Statistics timeStatistics;
-//std::cout<<timeStatistics.getNcalls()<<std::endl;
-
+extern Statistics timeStatistics;
 #define TIME(name) perf_time_t start_##name = calcTimeStatistics(); 
 #define EMIT(name) calcEmitStatistics(start_##name);
 
@@ -23,6 +21,9 @@ static Statistics timeStatistics;
 perf_time_t calcTicTime();
 void calcTocTime(perf_time_t ticTime);
 
+void startStatistics();
+void changeStstistics();
 perf_time_t calcTimeStatistics();
 void calcEmitStatistics(perf_time_t ticTime);
+
 

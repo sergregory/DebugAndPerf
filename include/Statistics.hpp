@@ -9,9 +9,13 @@ class Statistics{
 public:
 	Statistics();
 	int getNcalls() const;
+	int inctementNcalls();
 	float getTotalT() const;
+	float inctementTotalT(float oneTime);
 	float getAverageT() const;
-
+	float setAverageT();
+	bool getIsStarted() const;
+	bool getIsFinished();
 
 private:
 	int nCalls;
