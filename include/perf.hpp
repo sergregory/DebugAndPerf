@@ -24,10 +24,11 @@ extern Statistics timeStatistics;
 perf_time_t calcTicTime();
 void calcTocTime(perf_time_t ticTime);
 
-void startStatistics();
+
 void finishStatistics();
 perf_time_t calcTimeStatistics(std::string name);
 void calcEmitStatistics(perf_time_t ticTime);
 void printStatisticName();
+void statisticOutput();
 //getAllStatistics();
 
