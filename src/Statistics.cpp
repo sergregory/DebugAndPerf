@@ -5,7 +5,21 @@ Statistics::Statistics(){
 	nCalls = 0;
 	totalT = 0;
 	averageT = 0;
-	isStarted = 1;
+	changeIsStartedFalse();
+}
+void Statistics::setStasticsName(std::string sName){
+	stasticsName.push_back(sName);
+
+}
+
+std::string Statistics::getStasticsName(){
+	return stasticsName.back();
+}
+void Statistics::setNewStatistic(){
+	nCalls = 0;
+	totalT = 0;
+	averageT = 0;
+	//isStarted = 0;
 }
 
 int Statistics::getNcalls() const{
@@ -32,7 +46,11 @@ float Statistics::setAverageT(){
 	averageT = totalT/nCalls;
 	return averageT;
 }
-bool Statistics::setIsFinished(){
+bool Statistics::changeIsStartedTrue(){
+	isStarted = 1;
+	return isStarted;
+}
+bool Statistics::changeIsStartedFalse(){
 	isStarted = 0;
 	return isStarted;
 }

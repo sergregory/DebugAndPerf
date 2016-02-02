@@ -4,10 +4,16 @@
 
 #include <ctime>
 #include <iostream>
+#include <string.h>
+#include <vector>
 
 class Statistics{
 public:
 	Statistics();
+	
+	void setStasticsName(std::string sName);
+	std::string getStasticsName();
+	void setNewStatistic();
 
 	int getNcalls() const;	
 	float getTotalT() const;	
@@ -17,9 +23,11 @@ public:
 	int inctementNcalls();
 	float inctementTotalT(float oneTime);
 	float setAverageT();
-	bool setIsFinished();
+	bool changeIsStartedTrue();
+	bool changeIsStartedFalse();
 
 private:
+	std::vector <std::string> stasticsName;
 	int nCalls;
 	float totalT;
 	float averageT;
