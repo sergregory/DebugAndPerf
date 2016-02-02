@@ -9,11 +9,7 @@ void calcTocTime(perf_time_t ticTime){
 Statistics timeStatistics;
 
 void startStatistics(){
-	std::cout<<"Ncalls: "<<timeStatistics.getNcalls()<<std::endl;
-	std::cout<<"totalT: "<<timeStatistics.getTotalT()<<std::endl;
-	std::cout<<"averageT: "<<timeStatistics.getAverageT()<<std::endl;
-	std::cout<<"isStarted: "<<timeStatistics.getIsStarted()<<std::endl;
-	std::cout<<std::endl;
+	
 }
 void finishStatistics(){
 	timeStatistics.setAverageT();
@@ -29,10 +25,17 @@ void finishStatistics(){
 perf_time_t calcTimeStatistics(std::string name){
 	
 	if (timeStatistics.getIsStarted()==0)
-	{
+	{	
+		
 		timeStatistics.setStasticsName(name);
 		timeStatistics.setNewStatistic();
 	    timeStatistics.changeIsStartedTrue();
+
+		std::cout<<"Ncalls: "<<timeStatistics.getNcalls()<<std::endl;
+		std::cout<<"totalT: "<<timeStatistics.getTotalT()<<std::endl;
+		std::cout<<"averageT: "<<timeStatistics.getAverageT()<<std::endl;
+		std::cout<<"isStarted: "<<timeStatistics.getIsStarted()<<std::endl;
+		std::cout<<std::endl;
 	}
 	printStatisticName();
 	return clock();
