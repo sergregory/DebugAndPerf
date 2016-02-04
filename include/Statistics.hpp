@@ -28,9 +28,9 @@ public:
 
 private:
 	std::vector <std::string> stasticsName;
-	int nCalls;
-	float totalT;
-	float averageT;
+	std::vector<int> nCalls;
+	std::vector <float> totalT;
+	std::vector <float> averageT;
 	bool isStarted;
 
 };

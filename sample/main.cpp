@@ -25,10 +25,6 @@ int main()
 		EMIT(loop2);
 	}
 	finishStatistics();
-
-	//getAllStatistics();
-
-
 	
     return 0;
 }

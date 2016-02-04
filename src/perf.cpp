@@ -44,9 +44,15 @@ void printStatisticName(){
 }
 void statisticOutput(){
 	std::cout<<std::endl;
+	printStatisticName();
+	std::cout<<std::endl;
 	std::cout<<"Ncalls: "<<timeStatistics.getNcalls()<<std::endl;
 	std::cout<<"totalT: "<<timeStatistics.getTotalT()<<std::endl;
 	std::cout<<"averageT: "<<timeStatistics.getAverageT()<<std::endl;
 	std::cout<<"isStarted: "<<timeStatistics.getIsStarted()<<std::endl;
 	std::cout<<std::endl;
 }
+void getAllStatistics(){
+	
+}
+
