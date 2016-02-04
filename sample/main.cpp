@@ -1,24 +1,30 @@
 #include "perf.hpp"
-#include <iostream>
-#include <ctime>
-using namespace std;
-
-#define TIC(name) clock_t start_##name  = clock();
-#define TOC(name) std::cout << "Time for " #name << ": " << float(clock() - start_##name) / CLOCKS_PER_SEC << " sec" << std::endl
 
 
 int main()
 {
 	int a =4;
-	//clock_t t1 = clock();
-	TIC(loop);
-	for(int i = 0; i < 9000000; ++i)
+	for(int i = 0; i < 4; ++i)
 	{
-		a = a + 2;
+		TIME(loop1);
+		for(int i = 0; i < 9000000; ++i)
+		{
+			a = a + 2;
+		}
+		EMIT(loop1);
 	}
-	TOC(loop);
+	finishStatistics();
 	
-	//clock_t t2 = clock();
-	//cout << float(t2 - t1)/ CLOCKS_PER_SEC << " sec "<< endl;
+	for(int i = 0; i < 4; ++i)
+	{
+		TIME(loop2);
+		for(int i = 0; i < 9000000; ++i)
+		{
+			a = a + 2;
+		}
+		EMIT(loop2);
+	}
+	finishStatistics();
+	
     return 0;
 }
